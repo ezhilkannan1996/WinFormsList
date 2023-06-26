@@ -26,6 +26,7 @@
         Else
             MessageBox.Show("Please type some data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
+        DataRefresh()
     End Sub
 
     Public Function add()
@@ -37,6 +38,7 @@
 
     Private Sub Btn_Remove_Click(sender As Object, e As EventArgs) Handles Btn_Remove.Click
         Lst_Month.Items.Remove(Lst_Month.SelectedItem)
+        DataRefresh()
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -48,6 +50,7 @@
         Else
             MessageBox.Show("Please select data", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+        DataRefresh()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -55,9 +58,31 @@
             Lst_Transfer.Items.Add(item)
         Next
         Lst_Month.Items.Clear()
+        DataRefresh()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataRefresh()
+    End Sub
 
+    Public Function DataRefresh()
+        lbl_left_count.Text = Lst_Month.Items.Count()
+        lbl_right_count.Text = Lst_Transfer.Items.Count()
+        selectRow()
+        Return Nothing
+    End Function
+
+    Public Function selectRow()
+        lbl_left_selected_row.Text = Lst_Month.SelectedIndex + 1
+        lbl_right_selected_row.Text = Lst_Transfer.SelectedIndex + 1
+        Return Nothing
+    End Function
+
+    Private Sub Lst_Month_Click(sender As Object, e As EventArgs) Handles Lst_Month.Click
+        selectRow()
+    End Sub
+
+    Private Sub Lst_Transfer_Click(sender As Object, e As EventArgs) Handles Lst_Transfer.Click
+        selectRow()
     End Sub
 End Class
