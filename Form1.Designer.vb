@@ -37,6 +37,7 @@ Partial Class Form1
         lbl_left_count = New Label()
         lbl_right_selected_row = New Label()
         lbl_right_count = New Label()
+        lbl_alert = New Label()
         SuspendLayout()
         ' 
         ' Lst_Month
@@ -50,7 +51,7 @@ Partial Class Form1
         ' 
         ' Btn_Add
         ' 
-        Btn_Add.Location = New Point(288, 90)
+        Btn_Add.Location = New Point(224, 49)
         Btn_Add.Name = "Btn_Add"
         Btn_Add.Size = New Size(75, 23)
         Btn_Add.TabIndex = 1
@@ -59,7 +60,7 @@ Partial Class Form1
         ' 
         ' Btn_Remove
         ' 
-        Btn_Remove.Location = New Point(288, 119)
+        Btn_Remove.Location = New Point(224, 78)
         Btn_Remove.Name = "Btn_Remove"
         Btn_Remove.Size = New Size(75, 23)
         Btn_Remove.TabIndex = 2
@@ -70,7 +71,7 @@ Partial Class Form1
         ' 
         Txt_Data.Location = New Point(34, 49)
         Txt_Data.Name = "Txt_Data"
-        Txt_Data.Size = New Size(329, 23)
+        Txt_Data.Size = New Size(184, 23)
         Txt_Data.TabIndex = 3
         ' 
         ' Lst_Transfer
@@ -84,7 +85,7 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(288, 148)
+        Button1.Location = New Point(340, 188)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 5
@@ -93,7 +94,7 @@ Partial Class Form1
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(288, 177)
+        Button2.Location = New Point(340, 217)
         Button2.Name = "Button2"
         Button2.Size = New Size(75, 23)
         Button2.TabIndex = 6
@@ -105,18 +106,18 @@ Partial Class Form1
         Label1.AutoSize = True
         Label1.Location = New Point(34, 366)
         Label1.Name = "Label1"
-        Label1.Size = New Size(84, 15)
+        Label1.Size = New Size(97, 15)
         Label1.TabIndex = 7
-        Label1.Text = "Select row no :"
+        Label1.Text = "Selected row no :"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Location = New Point(421, 366)
         Label2.Name = "Label2"
-        Label2.Size = New Size(84, 15)
+        Label2.Size = New Size(97, 15)
         Label2.TabIndex = 8
-        Label2.Text = "Select row no :"
+        Label2.Text = "Selected row no :"
         ' 
         ' Label3
         ' 
@@ -168,11 +169,20 @@ Partial Class Form1
         lbl_right_count.Size = New Size(0, 15)
         lbl_right_count.TabIndex = 14
         ' 
+        ' lbl_alert
+        ' 
+        lbl_alert.ForeColor = Color.DarkBlue
+        lbl_alert.Location = New Point(224, 261)
+        lbl_alert.Name = "lbl_alert"
+        lbl_alert.Size = New Size(191, 66)
+        lbl_alert.TabIndex = 15
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(651, 431)
+        Controls.Add(lbl_alert)
         Controls.Add(lbl_right_count)
         Controls.Add(lbl_right_selected_row)
         Controls.Add(lbl_left_count)
@@ -209,4 +219,5 @@ Partial Class Form1
     Friend WithEvents lbl_left_count As Label
     Friend WithEvents lbl_right_selected_row As Label
     Friend WithEvents lbl_right_count As Label
+    Friend WithEvents lbl_alert As Label
 End Class

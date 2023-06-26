@@ -18,9 +18,11 @@
 
                 If Not exist Then
                     add()
+                    lbl_alert.Text = "successfully added"
                 End If
             Else
                 add()
+                lbl_alert.Text = "successfully added"
             End If
 
         Else
@@ -39,14 +41,14 @@
     Private Sub Btn_Remove_Click(sender As Object, e As EventArgs) Handles Btn_Remove.Click
         Lst_Month.Items.Remove(Lst_Month.SelectedItem)
         DataRefresh()
+        lbl_alert.Text = "successfully removed"
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        'Move to another list box
-        'remove it from old box
         If Lst_Month.SelectedIndex > -1 Then
             Lst_Transfer.Items.Add(Lst_Month.SelectedItem)
             Lst_Month.Items.Remove(Lst_Month.SelectedItem)
+            lbl_alert.Text = "transfer success"
         Else
             MessageBox.Show("Please select data", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -58,6 +60,7 @@
             Lst_Transfer.Items.Add(item)
         Next
         Lst_Month.Items.Clear()
+        lbl_alert.Text = "successfully added"
         DataRefresh()
     End Sub
 
@@ -80,9 +83,15 @@
 
     Private Sub Lst_Month_Click(sender As Object, e As EventArgs) Handles Lst_Month.Click
         selectRow()
+        lbl_alert.Text = String.Empty
     End Sub
 
     Private Sub Lst_Transfer_Click(sender As Object, e As EventArgs) Handles Lst_Transfer.Click
         selectRow()
+        lbl_alert.Text = String.Empty
+    End Sub
+
+    Private Sub Txt_Data_Click(sender As Object, e As EventArgs) Handles Txt_Data.Click
+        lbl_alert.Text = String.Empty
     End Sub
 End Class
