@@ -46,9 +46,30 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If Lst_Month.SelectedIndex > -1 Then
-            Lst_Transfer.Items.Add(Lst_Month.SelectedItem)
-            Lst_Month.Items.Remove(Lst_Month.SelectedItem)
-            lbl_alert.Text = "transfer success"
+
+            Dim itemToTransfer As String = Lst_Month.SelectedItem.ToString().Trim().ToLower()
+
+            If Lst_Transfer.Items.Count() > 0 Then
+
+                Dim exist As New Boolean
+
+                For Each existingItem As String In Lst_Transfer.Items
+                    If existingItem.ToLower() = itemToTransfer Then
+                        exist = True
+                        MessageBox.Show("Already exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End If
+                Next
+
+                If Not exist Then
+                    Lst_Transfer.Items.Add(Lst_Month.SelectedItem)
+                    Lst_Month.Items.Remove(Lst_Month.SelectedItem)
+                    lbl_alert.Text = "transfer success"
+                End If
+            Else
+                Lst_Transfer.Items.Add(Lst_Month.SelectedItem)
+                Lst_Month.Items.Remove(Lst_Month.SelectedItem)
+                lbl_alert.Text = "transfer success"
+            End If
         Else
             MessageBox.Show("Please select data", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

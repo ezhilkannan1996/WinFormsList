@@ -156,7 +156,7 @@ Partial Class Form1
         ' lbl_right_selected_row
         ' 
         lbl_right_selected_row.AutoSize = True
-        lbl_right_selected_row.Location = New Point(511, 366)
+        lbl_right_selected_row.Location = New Point(524, 366)
         lbl_right_selected_row.Name = "lbl_right_selected_row"
         lbl_right_selected_row.Size = New Size(0, 15)
         lbl_right_selected_row.TabIndex = 13
@@ -164,7 +164,7 @@ Partial Class Form1
         ' lbl_right_count
         ' 
         lbl_right_count.AutoSize = True
-        lbl_right_count.Location = New Point(513, 392)
+        lbl_right_count.Location = New Point(524, 392)
         lbl_right_count.Name = "lbl_right_count"
         lbl_right_count.Size = New Size(0, 15)
         lbl_right_count.TabIndex = 14
